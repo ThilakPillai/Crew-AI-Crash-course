@@ -7,8 +7,8 @@ load_dotenv()
 
 import os
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
-os.environ["OPENAI_MODEL_NAME"]="gpt-4-0125-preview"
-
+#os.environ["OPENAI_MODEL_NAME"]="gpt-4-0125-preview"
+modelname= os.getenv("gpt-4-0125-preview")
 
 ## Create a senior blog content researcher
 
@@ -37,7 +37,6 @@ blog_writer=Agent(
         "discoveries to light in an accessible manner."
     ),
     tools=[yt_tool],
+    llm = modelname,
     allow_delegation=False
-
-
 )
